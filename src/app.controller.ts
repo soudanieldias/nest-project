@@ -96,6 +96,20 @@ export class AppController {
     return this.postService.createPost(postData);
   }
 
+  @Put('posts/:id')
+  async updatePost(
+    @Param('id') id: string,
+    @Body()
+    postData: {
+      content: string;
+    },
+  ): Promise<PostModel> {
+    return this.postService.updatePost({
+      where: { id: Number(id) },
+      data: postData,
+    });
+  }
+
   @Delete('/posts/:id')
   async deletePostById(@Param('id') id: string): Promise<PostModel> {
     return this.postService.deletePost({ id: Number(id) });
