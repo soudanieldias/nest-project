@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Delete, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { PostService } from './posts/post.service';
 import { UserService } from './users/user.service';
@@ -28,6 +28,11 @@ export class AppController {
     return this.userService.user({ id: Number(id) });
   }
 
+  @Delete('/users/:id')
+  async deleteUserById(@Param('id') id: string): Promise<UserModel> {
+    return this.userService.deleteUser({ id: Number(id) });
+  }
+
   // POSTS ROUTES
   @Get('posts/')
   async getPosts(): Promise<PostModel[]> {
@@ -37,5 +42,10 @@ export class AppController {
   @Get('posts/:id')
   async getPostById(@Param('id') id: string): Promise<PostModel> {
     return this.postService.post({ id: Number(id) });
+  }
+
+  @Delete('/posts/:id')
+  async deletePostById(@Param('id') id: string): Promise<PostModel> {
+    return this.postService.deletePost({ id: Number(id) });
   }
 }
