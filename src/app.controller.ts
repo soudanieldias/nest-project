@@ -42,6 +42,24 @@ export class AppController {
     return this.userService.createUser(userData);
   }
 
+  @Put('users/:id')
+  async updateUser(
+    @Param('id') id: string,
+    @Body()
+    userData: {
+      id: number;
+      name: string;
+      birthDate: Date;
+      biography: string;
+      updatedAt: Date;
+    },
+  ): Promise<UserModel> {
+    return this.userService.updateUser({
+      where: { id: Number(id) },
+      data: userData,
+    });
+  }
+
   @Delete('users/:id')
   async deleteUserById(@Param('id') id: string): Promise<UserModel> {
     return this.userService.deleteUser({ id: Number(id) });
