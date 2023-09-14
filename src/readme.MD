@@ -15,31 +15,31 @@ Tarefas:
 [X] Posts: Cada post deve ter um ID, conteúdo, um usuário associado e data de criação.
 
 
-[] 3. **Rotas, Controladores e Services**:
+[X] 3. **Rotas, Controladores e Services**:
 **Crie rotas, controladores e services para realizar as seguintes operações:**
 
-[] **Usuários**:
-[] POST /users: Crie um novo usuário, recebendo nome, email, data de nascimento e biografia. Retorne os dados completos do usuário criado.
+[X] **Usuários**:
+[X] POST /users: Crie um novo usuário, recebendo nome, email, data de nascimento e biografia. Retorne os dados completos do usuário criado.
 
 [X] GET /users: Liste todos os usuários cadastrados.
 
-[] GET /users/:id: Obtenha os detalhes de um usuário específico.
+[X] GET /users/:id: Obtenha os detalhes de um usuário específico.
 
-[] PUT /users/:id: Atualize os dados de um usuário específico.
+[X] PUT /users/:id: Atualize os dados de um usuário específico.
 
-[] DELETE /users/:id: Exclua um usuário específico.
+[X] DELETE /users/:id: Exclua um usuário específico.
 
 
-[] **Posts**:
-[] POST /posts: Crie um novo post, recebendo o ID do usuário e o conteúdo do post. Retorne os dados completos do post criado.
+[X] **Posts**:
+[X] POST /posts: Crie um novo post, recebendo o ID do usuário e o conteúdo do post. Retorne os dados completos do post criado.
 
 [X] GET /posts: Liste todos os posts cadastrados.
 
-[] GET /posts/:id: Obtenha os detalhes de um post específico.
+[X] GET /posts/:id: Obtenha os detalhes de um post específico.
 
-[] PUT /posts/:id: Atualize o conteúdo de um post específico.
+[X] PUT /posts/:id: Atualize o conteúdo de um post específico.
 
-[] DELETE /posts/:id: Exclua um post específico.
+[X] DELETE /posts/:id: Exclua um post específico.
 
 
 
