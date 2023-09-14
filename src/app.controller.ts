@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { PostService } from './posts/post.service';
 import { UserService } from './users/user.service';
@@ -23,9 +23,19 @@ export class AppController {
     return this.userService.users({});
   }
 
+  @Get('users/:id')
+  async getUserById(@Param('id') id: string): Promise<UserModel> {
+    return this.userService.user({ id: Number(id) });
+  }
+
   // POSTS ROUTES
   @Get('posts/')
   async getPosts(): Promise<PostModel[]> {
     return this.postService.posts({});
+  }
+
+  @Get('posts/:id')
+  async getPostById(@Param('id') id: string): Promise<PostModel> {
+    return this.postService.post({ id: Number(id) });
   }
 }
