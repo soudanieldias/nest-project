@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import { PostService } from './posts/post.service';
 import { UserService } from './users/user.service';
@@ -27,6 +35,7 @@ export class AppController {
   async getUserById(@Param('id') id: string): Promise<UserModel> {
     return this.userService.user({ id: Number(id) });
   }
+
   @Post('users/')
   async signupUser(
     @Body()
@@ -74,6 +83,17 @@ export class AppController {
   @Get('posts/:id')
   async getPostById(@Param('id') id: string): Promise<PostModel> {
     return this.postService.post({ id: Number(id) });
+  }
+
+  @Post('posts/')
+  async addNewPost(
+    @Body()
+    postData: {
+      content: string;
+      authorId: number;
+    },
+  ): Promise<PostModel> {
+    return this.postService.createPost(postData);
   }
 
   @Delete('/posts/:id')
