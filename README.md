@@ -43,3 +43,7 @@ Este comando irá inicializar o nest, e deixar nossa API online na porta 3000
 Para verificar se sua API está rodando corretamente, acesse a rota de HealthCheck:
 - ``http://localhost:3000/healthcheck``
 Será mostrada uma mensagem "Hello World!"
+
+
+**Acessando o Swagger para testar a API via Web:**
+- ``http://localhost:3000/api-docs/``
