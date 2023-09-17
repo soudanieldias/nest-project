@@ -12,3 +12,15 @@ services:
       - ./data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+  nest-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - db
