@@ -10,8 +10,6 @@ COPY . .
 
 RUN npx prisma db push
 
-RUN ts-node prisma/seed.ts
-
 RUN npm run build
 
 EXPOSE 3000
