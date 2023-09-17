@@ -44,6 +44,10 @@ Para verificar se sua API está rodando corretamente, acesse a rota de HealthChe
 - ``http://localhost:3000/healthcheck``
 Será mostrada uma mensagem "Hello World!"
 
+**Inicializando a API via Docker:**
+Para inicializar a API via Docker, digite no terminal:
+- ``docker-compose up``
+Será inicializada a Montagem da imagem Dockerfile configurada e apontada no arquivo ``docker-compose.yml`` do projeto, juntamente do Banco de Dados postgres, este também *configurado* no ``docker-compose.yml``
 
 **Acessando o Swagger para testar a API via Web:**
 - ``http://localhost:3000/api-docs/``
